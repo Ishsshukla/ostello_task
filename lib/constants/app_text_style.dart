@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:ostello/constants/app_color.dart';
 
@@ -16,9 +15,7 @@ class AppTextStyles {
   );
 
   static const TextStyle smallText = TextStyle(
-    fontSize: 12,
-    color: AppColors.textColor,
-  );
+      fontSize: 10, color: AppColors.textColor, fontWeight: FontWeight.w500);
 
   static const TextStyle whiteText = TextStyle(
     fontSize: 14,

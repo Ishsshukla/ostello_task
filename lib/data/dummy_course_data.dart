@@ -10,7 +10,7 @@ final List<Map<String, String>> data = [
     'views': '2.5M'
   },
   {
-    'image': 'assets/images/class.png',
+    'image': 'assets/images/class_image.png',
     'title': 'Manoj Classes',
     'views': '2.5M'
   },

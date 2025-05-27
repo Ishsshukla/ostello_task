@@ -40,7 +40,7 @@ class LessonCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Progress Indicator
+      
           CircularPercentIndicator(
             radius: AppDimensions.progressSize,
             lineWidth: 6,

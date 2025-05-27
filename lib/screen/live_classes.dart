@@ -28,7 +28,7 @@ class _CourseScreenState extends State<CourseScreen> {
             children: [
               WeeklyProgressCard(),
               Padding(
-                padding: const EdgeInsets.all(0.0),
+                padding: const EdgeInsets.symmetric(horizontal: 0.0),
                 child: isExpanded
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,25 +48,25 @@ class _CourseScreenState extends State<CourseScreen> {
                 title: "Start Speaking: From Zero to Basic",
                 subtitle: "Get started with Stella!",
                 onExpand: () {},
-                isActive: true, 
+                isActive: true,
               ),
               CompactCardIcon(
-                title: "Welcome & Roadmap",
-                subtitle: "Subscribe to Unlock",
-                onExpand: () {},
-                isActive: false, 
-              ),
-              CompactCardIcon(
-                title: "Welcome & Roadmap",
+                title: "Use Easy and Powerful Words",
                 subtitle: "Subscribe to Unlock",
                 onExpand: () {},
                 isActive: false,
               ),
               CompactCardIcon(
-                title: "Welcome & Roadmap",
+                title: "Use Easy and Powerful Words",
                 subtitle: "Subscribe to Unlock",
                 onExpand: () {},
-                isActive: false, 
+                isActive: false,
+              ),
+              CompactCardIcon(
+                title: "Use Easy and Powerful Words",
+                subtitle: "Subscribe to Unlock",
+                onExpand: () {},
+                isActive: false,
               ),
             ],
           ),

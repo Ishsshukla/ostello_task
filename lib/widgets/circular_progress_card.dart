@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ostello/constants/app_color.dart';
 import 'package:ostello/constants/app_dimesnion.dart';
 import 'package:ostello/constants/app_text_style.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 class WeeklyProgressCard extends StatelessWidget {
   const WeeklyProgressCard({super.key});
@@ -15,7 +14,7 @@ class WeeklyProgressCard extends StatelessWidget {
         padding: const EdgeInsets.all(AppDimensions.padding * 1.25),
         decoration: BoxDecoration(
           color: const Color(0xFF7D23E0),
-          borderRadius: BorderRadius.circular(AppDimensions.cardRadius * 1.5),
+          borderRadius: BorderRadius.circular(28),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -23,13 +22,13 @@ class WeeklyProgressCard extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   'Weekly progress',
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Plus Jakarta Sans',
                     fontWeight: FontWeight.w500,
+                    fontFamily: 'Plus Jakarta Sans',
                     color: Colors.white,
                   ),
                 ),
@@ -44,28 +43,26 @@ class WeeklyProgressCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: AppDimensions.padding * 0.75),
+            const SizedBox(height: 12),
             ClipRRect(
-              borderRadius: BorderRadius.circular(AppDimensions.cardRadius / 2),
+              borderRadius: BorderRadius.circular(20),
               child: LinearProgressIndicator(
                 value: 0.8,
-                minHeight: AppDimensions.progressSize / 5,
+                minHeight: 6,
                 backgroundColor: Colors.white.withOpacity(0.3),
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
               ),
             ),
-            const SizedBox(height: AppDimensions.padding * 1.5),
+            const SizedBox(height: 24),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
                   'assets/images/girl.png',
-                  width: AppDimensions.progressSize * 0.8, // 32 = 40 * 0.8
-                  height: AppDimensions.progressSize * 0.8,
-                  fit: BoxFit.cover,
+                  scale: 3.5,
                 ),
-                const SizedBox(width: AppDimensions.padding * 0.75),
-                Expanded(
+                const SizedBox(width: 12),
+                const Expanded(
                   child: Text(
                     'Speak confidently–\nachieve your goals today!',
                     style: TextStyle(
@@ -77,45 +74,50 @@ class WeeklyProgressCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: AppDimensions.padding * 0.75),
-                CircleAvatar(
-                  radius: AppDimensions.playButtonSize / 2,
-                  backgroundColor: Colors.white,
-                  child: Icon(
+                const SizedBox(width: 12),
+                Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
+                  child: const Icon(
                     Icons.play_arrow,
-                    color: const Color(0xFF7D23E0),
-                    size: AppDimensions.playButtonSize * 0.56,
+                    color: Color(0xFF7D23E0),
+                    size: 28,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: AppDimensions.padding * 1.5),
+            const SizedBox(height: 18),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius:
-                    BorderRadius.circular(AppDimensions.cardRadius * 1.5),
+                borderRadius: BorderRadius.circular(30),
               ),
               padding: const EdgeInsets.symmetric(
-                horizontal: AppDimensions.padding * 0.625,
-                vertical: AppDimensions.padding * 0.75,
+                horizontal: 24,
+                vertical: 12,
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Text(
                     'Buy this Course',
                     style: TextStyle(
-                      color: const Color(0xFF7D23E0),
+                      color: Color(0xFF7D23E0),
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Plus Jakarta Sans',
                     ),
                   ),
-                  const SizedBox(width: AppDimensions.padding * 0.5),
+                  SizedBox(width: 8),
                   Icon(
                     Icons.arrow_forward,
-                    color: const Color(0xFF7D23E0),
+                    size: 20,
+                    color: Color(0xFF7D23E0),
                   ),
                 ],
               ),
