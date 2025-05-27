@@ -36,7 +36,12 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
   └── CourseProgressCard.dart
   └── ChapterList.dart
   └── ChapterItem.dart
-  └── LockOverlay.dart
+  └── CircularPlayButton.dart
+  └── AppBar.dart
+  └── lessonCard.dart
+  └── sectionTitle.dart
+  └── horizontalCard.dart
+
 
 /data
   └── courseData.dart
@@ -44,8 +49,15 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
 /screens
   └── CourseCurriculumScreen.dart
 
-/styles
+/constants
   └── curriculumStyles.dart
+  └── AppDimensions.dart
+  └── colors.dart.dart
+/models
+
+/core
+
+/main.dart
 ```
 
 ---
