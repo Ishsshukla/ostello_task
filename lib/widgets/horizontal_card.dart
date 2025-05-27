@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:ostello/widgets/compact_card.dart';
 import 'package:ostello/widgets/section_tile.dart';
@@ -30,16 +31,18 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppDimensions.padding,
+            vertical: AppDimensions.paddingSmall,
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Purple Play Button
               Container(
-                width: 36,
-                height: 36,
+                width: AppDimensions.iconSizeLarge,
+                height: AppDimensions.iconSizeLarge,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF8A2BE2), // Purple
+                  color: AppColors.primary,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -47,9 +50,8 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: AppDimensions.paddingSmall),
 
-              // Title and Subtitle
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +77,6 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                 ),
               ),
 
-              // Arrow Icon (Clickable)
               GestureDetector(
                 onTap: onArrowTap,
                 child: const Icon(
@@ -92,22 +93,19 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
             SectionTitle(title: "Exclusive Reels"),
           ],
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: AppDimensions.paddingSmall),
         SizedBox(
-          height: AppDimensions.imageHeight + 30,
+          height: AppDimensions.imageHeight + AppDimensions.paddingSmall * 2,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding:
-                const EdgeInsets.symmetric(horizontal: AppDimensions.padding),
+            padding: const EdgeInsets.symmetric(horizontal: AppDimensions.padding),
             itemBuilder: (context, index) {
               final item = dummyData[index];
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // The Image Card
                   ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(AppDimensions.cardRadius),
+                    borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
                     child: Image.asset(
                       item['image'],
                       width: AppDimensions.imageWidth,
@@ -115,20 +113,19 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  // The Lesson Card
+                  SizedBox(height: AppDimensions.paddingSmall),
                 ],
               );
             },
-            separatorBuilder: (_, __) => const SizedBox(width: 12),
+            separatorBuilder: (_, __) => SizedBox(width: AppDimensions.paddingSmall),
             itemCount: dummyData.length,
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(AppDimensions.paddingSmall),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.1),
@@ -139,9 +136,8 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
           ),
           child: Row(
             children: [
-              // Circular Progress with Text inside
               CircularPercentIndicator(
-                radius: 24,
+                radius: AppDimensions.iconSizeLarge,
                 lineWidth: 5,
                 percent: 0.2,
                 animation: true,
@@ -168,8 +164,7 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                 backgroundColor: AppColors.progressBackground,
                 circularStrokeCap: CircularStrokeCap.round,
               ),
-              const SizedBox(width: 12),
-              // Title & Subtitle
+              SizedBox(width: AppDimensions.paddingSmall),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,7 +176,7 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                         fontFamily: 'Plus Jakarta Sans',
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: AppDimensions.paddingExtraSmall),
                     Text(
                       "Get start with Stella!",
                       style: AppTextStyles.smallText.copyWith(
@@ -192,11 +187,10 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
                   ],
                 ),
               ),
-              // Duration
               Row(
                 children: [
                   const Icon(Icons.access_time, size: 16, color: Colors.grey),
-                  const SizedBox(width: 4),
+                  SizedBox(width: AppDimensions.paddingExtraSmall),
                   Text(
                     "6h 30min",
                     style: AppTextStyles.smallText.copyWith(
@@ -209,20 +203,18 @@ class _HorizontalCardListState extends State<HorizontalCardList> {
             ],
           ),
         ),
+        SizedBox(height: AppDimensions.paddingSmall),
         CompactCard(
           title: "Welcome & Roadmap",
           subtitle: "Get started with Stella!",
-          // onExpand: () => toggleExpand(true),
         ),
         CompactCard(
           title: "Welcome & Roadmap",
           subtitle: "Get started with Stella!",
-          // onExpand: () => toggleExpand(true),
         ),
         CompactCard(
           title: "Welcome & Roadmap",
           subtitle: "Get started with Stella!",
-          // onExpand: () => toggleExpand(true),
         ),
       ],
     );

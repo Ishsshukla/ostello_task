@@ -41,32 +41,32 @@ class _CourseScreenState extends State<CourseScreen> {
                         title: "Welcome & Roadmap",
                         subtitle: "Get started with Stella!",
                         onExpand: () => toggleExpand(true),
-                        isActive: true, // Set to true for active state
+                        isActive: true,
                       ),
               ),
               CompactCardIcon(
                 title: "Start Speaking: From Zero to Basic",
                 subtitle: "Get started with Stella!",
                 onExpand: () {},
-                isActive: true, // Set to true for active state
+                isActive: true, 
               ),
               CompactCardIcon(
                 title: "Welcome & Roadmap",
                 subtitle: "Subscribe to Unlock",
                 onExpand: () {},
-                isActive: false, // Set to true for active state
+                isActive: false, 
               ),
               CompactCardIcon(
                 title: "Welcome & Roadmap",
                 subtitle: "Subscribe to Unlock",
                 onExpand: () {},
-                isActive: false, // Set to true for active state
+                isActive: false,
               ),
               CompactCardIcon(
                 title: "Welcome & Roadmap",
                 subtitle: "Subscribe to Unlock",
                 onExpand: () {},
-                isActive: false, // Set to true for active state
+                isActive: false, 
               ),
             ],
           ),

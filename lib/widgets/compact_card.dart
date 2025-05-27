@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:ostello/constants/app_dimesnion.dart';
 
 class CompactCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  // final VoidCallback onExpand;
 
   const CompactCard({
+    super.key,
     required this.title,
     required this.subtitle,
-    // required this.onExpand,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppDimensions.padding, 
+        vertical: AppDimensions.padding / 2, 
+      ),
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AppDimensions.padding * 0.75), 
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius:
+              BorderRadius.circular(AppDimensions.cardRadius * 0.75), 
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -30,8 +34,12 @@ class CompactCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(Icons.play_circle_fill, color: Colors.purple, size: 40),
-            const SizedBox(width: 12),
+            Icon(
+              Icons.play_circle_fill,
+              color: Colors.purple,
+              size: AppDimensions.progressSize, 
+            ),
+            const SizedBox(width: AppDimensions.padding * 0.75), 
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,9 +49,10 @@ class CompactCard extends StatelessWidget {
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 14,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: AppDimensions.padding / 4), 
                   Text(
                     subtitle,
                     style: const TextStyle(
@@ -63,10 +72,6 @@ class CompactCard extends StatelessWidget {
                 fontFamily: 'Plus Jakarta Sans',
               ),
             ),
-            // IconButton(
-            //   icon: const Icon(Icons.expand_more),
-            //   onPressed: onExpand,
-            // ),
           ],
         ),
       ),

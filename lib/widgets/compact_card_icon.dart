@@ -1,12 +1,15 @@
+
 import 'package:flutter/material.dart';
+import 'package:ostello/constants/app_dimesnion.dart';
 
 class CompactCardIcon extends StatelessWidget {
   final String title;
   final String subtitle;
   final VoidCallback onExpand;
-  final bool isActive; // Optional: Track if the card is active
+  final bool isActive;
 
   const CompactCardIcon({
+    super.key,
     required this.title,
     required this.subtitle,
     required this.onExpand,
@@ -16,12 +19,16 @@ class CompactCardIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppDimensions.padding,
+        vertical: AppDimensions.padding / 2,
+      ),
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AppDimensions.padding * 0.75), 
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius:
+              BorderRadius.circular(AppDimensions.cardRadius * 0.75), 
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -33,14 +40,17 @@ class CompactCardIcon extends StatelessWidget {
         child: Row(
           children: [
             isActive
-                ? const Icon(Icons.play_circle_fill,
-                    color: Colors.purple, size: 40)
+                ? Icon(
+                    Icons.play_circle_fill,
+                    color: Colors.purple,
+                    size: AppDimensions.progressSize, 
+                  )
                 : Image.asset(
                     'assets/images/button.png',
-                    width: 40,
-                    height: 40,
+                    width: AppDimensions.progressSize, 
+                    height: AppDimensions.progressSize, 
                   ),
-            const SizedBox(width: 12),
+            const SizedBox(width: AppDimensions.padding * 0.75), 
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,18 +63,21 @@ class CompactCardIcon extends StatelessWidget {
                       color: isActive ? Colors.black : Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 4),
-                  Text(subtitle,
-                      style: const TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey)),
+                  const SizedBox(height: AppDimensions.padding / 4), 
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             ),
-            // const Text("6h 30min", style: TextStyle(fontSize: 12, color: Colors.grey)),
             IconButton(
               icon: const Icon(Icons.expand_more),
+              iconSize: AppDimensions.progressSize * 0.75, 
               onPressed: onExpand,
             ),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ostello/constants/app_dimesnion.dart';
 
 class CourseCurriculumAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -10,31 +11,30 @@ class CourseCurriculumAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric( horizontal: AppDimensions.padding,
+          vertical: AppDimensions.padding / 2,),
         child: Row(
           children: [
-            // Back button with purple background
+            
             InkWell(
               onTap: onBack ?? () => Navigator.pop(context),
               borderRadius: BorderRadius.circular(24),
               child: Container(
-                width: 40,
-                height: 40,
+                  width: AppDimensions.progressSize,
+                height: AppDimensions.progressSize,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF3E8FF), // Light purple background
+                  color: const Color(0xFFF3E8FF), 
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.arrow_back_ios_new,
-                  color: Color(0xFF8A2BE2), // Deep purple arrow
+                  color: Color(0xFF8A2BE2), 
                   size: 20,
                 ),
               ),
             ),
 
-            const SizedBox(width: 40),
-
-            // Title centered vertically
+            const SizedBox(width: AppDimensions.padding * 2.5),
             const Text(
               'Course Curriculum',
               style: TextStyle(

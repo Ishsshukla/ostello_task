@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ostello/constants/app_color.dart';
 import 'package:ostello/constants/app_dimesnion.dart';
 import 'package:ostello/constants/app_text_style.dart';
-
 import 'package:percent_indicator/percent_indicator.dart';
 
 class WeeklyProgressCard extends StatelessWidget {
@@ -12,17 +11,16 @@ class WeeklyProgressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.all(16),
-        padding: const EdgeInsets.all(20),
+        margin: const EdgeInsets.all(AppDimensions.padding),
+        padding: const EdgeInsets.all(AppDimensions.padding * 1.25),
         decoration: BoxDecoration(
-          color: const Color(0xFF7D23E0), // Updated to new purple color
-          borderRadius: BorderRadius.circular(24),
+          color: const Color(0xFF7D23E0),
+          borderRadius: BorderRadius.circular(AppDimensions.cardRadius * 1.5),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top Row with Progress
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -46,31 +44,27 @@ class WeeklyProgressCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
-
-            // Progress Bar
+            const SizedBox(height: AppDimensions.padding * 0.75),
             ClipRRect(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppDimensions.cardRadius / 2),
               child: LinearProgressIndicator(
                 value: 0.8,
-                minHeight: 8,
+                minHeight: AppDimensions.progressSize / 5,
                 backgroundColor: Colors.white.withOpacity(0.3),
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               ),
             ),
-            const SizedBox(height: 24),
-
-            // Text with Icon
+            const SizedBox(height: AppDimensions.padding * 1.5),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
                   'assets/images/girl.png',
-                  width: 32,
-                  height: 32,
+                  width: AppDimensions.progressSize * 0.8, // 32 = 40 * 0.8
+                  height: AppDimensions.progressSize * 0.8,
                   fit: BoxFit.cover,
                 ),
-                const SizedBox(width: 12),
+                const SizedBox(width: AppDimensions.padding * 0.75),
                 Expanded(
                   child: Text(
                     'Speak confidently–\nachieve your goals today!',
@@ -83,28 +77,29 @@ class WeeklyProgressCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
-                // Play Button
+                const SizedBox(width: AppDimensions.padding * 0.75),
                 CircleAvatar(
-                  radius: 24,
+                  radius: AppDimensions.playButtonSize / 2,
                   backgroundColor: Colors.white,
                   child: Icon(
                     Icons.play_arrow,
                     color: const Color(0xFF7D23E0),
-                    size: 28,
+                    size: AppDimensions.playButtonSize * 0.56,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 24),
-
-            // Buy this Course Button
+            const SizedBox(height: AppDimensions.padding * 1.5),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius:
+                    BorderRadius.circular(AppDimensions.cardRadius * 1.5),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppDimensions.padding * 0.625,
+                vertical: AppDimensions.padding * 0.75,
+              ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -117,7 +112,7 @@ class WeeklyProgressCard extends StatelessWidget {
                       fontFamily: 'Plus Jakarta Sans',
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: AppDimensions.padding * 0.5),
                   Icon(
                     Icons.arrow_forward,
                     color: const Color(0xFF7D23E0),

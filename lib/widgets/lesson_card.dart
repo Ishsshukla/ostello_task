@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:ostello/constants/app_dimesnion.dart'; 
 
 class LessonCard extends StatelessWidget {
   final String title;
@@ -20,11 +22,14 @@ class LessonCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(
+        horizontal: AppDimensions.padding,
+        vertical: AppDimensions.paddingSmall,
+      ),
+      padding: const EdgeInsets.all(AppDimensions.padding),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.1),
@@ -35,11 +40,11 @@ class LessonCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Circular Progress Indicator with Text inside
+          // Progress Indicator
           CircularPercentIndicator(
-            radius: 32,
+            radius: AppDimensions.progressSize,
             lineWidth: 6,
-            percent: progress, // e.g., 0.2 for 20%
+            percent: progress,
             animation: true,
             center: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +52,7 @@ class LessonCard extends StatelessWidget {
                 Text(
                   countText,
                   style: const TextStyle(
-                    fontSize: 12,
+                    fontSize: AppDimensions.fontSizeSmall,
                     color: Colors.black54,
                     fontFamily: 'Plus Jakarta Sans',
                   ),
@@ -56,7 +61,7 @@ class LessonCard extends StatelessWidget {
                   '${(progress * 100).toInt()}%',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                    fontSize: AppDimensions.fontSizeMedium,
                     fontFamily: 'Plus Jakarta Sans',
                   ),
                 ),
@@ -67,9 +72,9 @@ class LessonCard extends StatelessWidget {
             circularStrokeCap: CircularStrokeCap.round,
           ),
 
-          const SizedBox(width: 16),
+          const SizedBox(width: AppDimensions.padding),
 
-          // Title and Subtitle
+  
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,16 +82,16 @@ class LessonCard extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: AppDimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Plus Jakarta Sans',
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: AppDimensions.paddingExtraSmall),
                 Text(
                   subtitle,
                   style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: AppDimensions.fontSizeMedium,
                     color: Colors.grey,
                     fontFamily: 'Plus Jakarta Sans',
                   ),
@@ -95,11 +100,15 @@ class LessonCard extends StatelessWidget {
             ),
           ),
 
-          // Duration with Icon
+          
           Row(
             children: [
-              const Icon(Icons.access_time, size: 18, color: Colors.grey),
-              const SizedBox(width: 4),
+              const Icon(
+                Icons.access_time,
+                size: AppDimensions.iconSizeSmall,
+                color: Colors.grey,
+              ),
+              const SizedBox(width: AppDimensions.paddingExtraSmall),
               Text(
                 duration,
                 style: const TextStyle(
