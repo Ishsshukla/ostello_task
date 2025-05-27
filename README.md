@@ -1,10 +1,9 @@
-Here's a professional-level `README.md` file for the course curriculum page you’re building, assuming this is for a React or mobile-based app development environment:
 
 ---
 
 # 📘 Course Curriculum Page
 
-A professional-grade, dynamic course curriculum screen for an educational mobile/web application. This screen enables learners to track their **weekly and daily progress**, interact with **exclusive reels**, and unlock chapters sequentially upon completion.
+A professional-grade, dynamic course curriculum screen for an educational mobile application. This screen enables learners to track their **weekly and daily progress**, interact with **exclusive reels**, and unlock chapters sequentially upon completion.
 
 ---
 
@@ -13,7 +12,7 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
 * **Weekly Progress Tracker**
   Visual tracker showing overall course completion percentage.
 
-* **Daily Progress Card** *(if implemented)*
+* **Daily Progress Card** 
   Optionally shows daily goals or habits (can be extended).
 
 * **Locked Chapter System**
@@ -34,19 +33,19 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
 
 ```
 /components
-  └── CourseProgressCard.tsx
-  └── ChapterList.tsx
-  └── ChapterItem.tsx
-  └── LockOverlay.tsx
+  └── CourseProgressCard.dart
+  └── ChapterList.dart
+  └── ChapterItem.dart
+  └── LockOverlay.dart
 
 /data
-  └── courseData.json
+  └── courseData.dart
 
 /screens
-  └── CourseCurriculumScreen.tsx
+  └── CourseCurriculumScreen.dart
 
 /styles
-  └── curriculumStyles.ts
+  └── curriculumStyles.dart
 ```
 
 ---
@@ -56,7 +55,7 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
 ### 📈 Progress Logic
 
 * Weekly progress is fetched from user activity and reflected on a progress bar.
-* Each chapter/module tracks its own completion state (e.g., using local state, Redux, or backend sync).
+* Each chapter/module tracks its own completion state .
 
 ### 🔓 Chapter Unlock Flow
 
@@ -67,21 +66,14 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
    * The next chapter in sequence becomes unlocked.
 3. Locked chapters have a blurred overlay and lock icon until prerequisites are fulfilled.
 
-### 🔒 Subscription Check (if applicable)
-
-Some modules like `Use Easy and Powerful Words` are subscription-gated.
-
-* If user is unsubscribed, show lock icon and “Subscribe to Unlock” text.
-* On tap, redirect to subscription screen.
 
 ---
 
 ## 🔧 Tech Stack
 
 * **Frontend**: Flutter 
-* **State Management**: Redux / Context API / Zustand
-* **UI Library**: Tailwind CSS / Styled Components / NativeBase
-* **Backend (Optional)**: Firebase / Node.js / REST API
+* **State Management**: RiverPod
+* **Backend (Optional)**: REST API
 
 ---
 
