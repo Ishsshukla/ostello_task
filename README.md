@@ -103,9 +103,7 @@ A professional-grade, dynamic course curriculum screen for an educational mobile
 
 ---
 
-## 📸 UI Reference
 
-![Curriculum UI Screenshot](./assets/ui-screenshot.png)
 
 ---
 
